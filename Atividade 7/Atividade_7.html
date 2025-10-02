@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo: Pedra, Papel ou Tesoura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .opcoes {
+      margin: 20px;
+    }
+
+    .opcoes button {
+      font-size: 50px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: transform 0.2s;
+    }
+
+    .opcoes button:hover {
+      transform: scale(1.2);
+    }
+
+    .resultado {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .escolhas {
+      margin-top: 20px;
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>✊ ✋ ✌️ Pedra, Papel ou Tesoura</h1>
+  <p>Clique em um emoji para jogar:</p>
+
+  <div class="opcoes">
+    <button onclick="jogar('pedra')">✊</button>
+    <button onclick="jogar('papel')">✋</button>
+    <button onclick="jogar('tesoura')">✌️</button>
+  </div>
+
+  <div class="resultado" id="resultado"></div>
+
+  <div class="escolhas" id="escolhas"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
