@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Criar Objetos</title>
+</head>
+<body>
+    <script>
+        //usando Objeto
+        
+        //1 Modo 
+        var aluno1 = new Object();
+        aluno1.ra = "0030482323022";
+        aluno1.nome = "Robert";
+        alert(`ra = ${aluno1.ra} nome = ${aluno1.nome}`);
+
+        //2 Modo
+        var aluno2 = {};
+        aluno2.ra = "0030482323001";
+        aluno2["nome"] = "Rodrigo";
+        alert("ra = " + aluno2.ra + " nome = " + aluno2.nome);
+
+        aluno2["email do aluno"] = "rodrigo@gmail.com";
+        alert(aluno2["email do aluno"]);
+
+        //3 Modo
+        var aluno3 = {
+            ra:"0030482323002",
+            nome: "Murilo"
+        }
+        alert("ra = " + aluno3.ra + " nome = " + aluno3.nome);
+
+        //4 Modo
+        function Aluno(ra, nome){
+            this.ra = ra;
+            this.nome = nome;
+            this.MostraDados = function(){
+                return "ra = " + this.ra
+                + " nome = " + this.nome;
+            }
+        }
+        var aluno4 = new Aluno("123123", "Ana");
+        alert(aluno4.MostraDados());
+        
+        //5 Modo - Função Construtora
+        function Aluno2(){
+            var ra;
+            var nome;
+            this.setRa = function(value){
+                this.ra = value;
+            }
+            this.getRa = function(){
+                return this.ra;
+            }
+            this.setNome = function(value){
+                this.nome = value;
+            }
+            this.getNome = function(){
+                return this.nome;
+            }
+        }
+        var aluno5 = new Aluno2();
+        aluno5.setNome("Jose");
+        aluno5.setRa("098774")
+        alert("ra = " + aluno5.getRa() + " nome = " + aluno5.getNome());
+
+            //Herança
+            function alunoADS(){
+                var numLab;
+                this.setNumLab = function(value){
+                    this.numLab = value;
+                }
+                this.getNumLab = function(){
+                    return this.numLab;
+                }
+            }
+            alunoADS.prototype = new Aluno2(); //Como um Extends
+            var aluno6 = new alunoADS();
+            aluno6.setNome("Pedro");
+            aluno6.setRa("09234");
+            aluno6.setNumLab(5);
+            alert("nome = " + aluno6.getNome()
+                + " ra = " + aluno6.getRa()
+                + " Laboratório = " + aluno6.getNumLab())
+        
+        //6 Modo - Class
+        class Aluno1{
+            constructor(){
+                this._ra;
+                this._nome;
+            }
+            setNome(value){
+                this._nome = value;
+            }
+            getNome(){
+                return this._nome;
+            }
+            setRa(value){
+                this._ra = value;
+            }
+            getRa(){
+                return this._ra;
+            }
+        }
+        var objAluno = new Aluno1();
+        objAluno.setNome("João");
+        objAluno.setRa('123');
+        alert("nome = " + objAluno.getNome()
+            + " ra = " + objAluno.getRa());
+
+            //Herança
+            class AlunoADS1 extends Aluno1{
+                constructor(){
+                    super();
+                    this._numLab;
+                }
+                setNumLab(value){
+                    this._numLab = value;
+                }
+                getNumLab(){
+                    return this.numLab;
+                }
+            }
+    </script>
+</body>
+</html>
