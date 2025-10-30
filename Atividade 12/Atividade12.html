@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+    <script>
+        //Exercício 1
+        function Retangulo(x,y){
+            alert("A área do retângulo é:" x*y);
+        }
+        var objRetangulo = new Retangulo(prompt("Digite a base do retângulo: "),
+                                         prompt("Digite a altura do retângulo"));
+        
+
+        //Exercício 2
+        class Conta{
+            constructor(){
+                this.nomeCorrentista;
+                this.banco;
+                this.numConta;
+                this.saldo;
+            }
+            setNomeCorrentista(value){
+                this.nomeCorrentista = value;
+            }
+            setBanco(value){
+                this.banco = value;
+            }
+            setNumConta(value){
+                this.numConta = value;
+            }
+            setSaldo(value){
+                this.saldo = value;
+            }
+            getNomeCorrentista(){
+                return this.nomeCorrentista;
+            }
+            getBanco(){
+                return this.banco;
+            }
+            getNumConta(){
+                return this.numConta
+            }
+            getSaldo(){
+                return this.saldo;
+            }
+            
+        }
+            class Corrente extends Conta{
+                constructor(){
+                    super();
+                    this.saldoEspecial;
+                }
+                setSaldoEspecial(value){
+                    this.saldoEspecial = value;
+                }
+                getSaldoEspecial(){
+                    return this.saldoEspecial;
+                }
+            }
+            class Poupanca extends Conta{
+                constructor(){
+                    super();
+                    this.juros;
+                }
+                setJuros(value){
+                    this.juros = value;
+                }
+                getJuros(){
+                    return this.juros;
+                }
+            }
+        
+        var objCorrente = new Corrente();
+        objCorrente.setNomeCorrentista = prompt("Conta Corrente - Nome: ");
+        objCorrente.setBanco = prompt("Conta Corrente - Banco: ");
+        objCorrente.setNumConta = prompt("Conta Corrente - Número da Conta: ");
+        objCorrente.setSaldo = prompt("Conta Corrente - Saldo: ");
+        objCorrente.setSaldoEspecial = prompt("Conta Corrente - Saldo Especial: ");
+
+        var objPoupanca = new Poupanca();
+        objPoupanca.setNomeCorrentista = prompt("Conta Poupança - Nome: ");
+        objPoupanca.setBanco = prompt("Conta Poupança - Banco: ");
+        objPoupanca.setNumConta = prompt("Conta Poupança - Número da Conta: ");
+        objPoupanca.setSaldo = prompt("Conta Poupança - Saldo: ");
+        objPoupanca.setJuros = prompt("Conta Poupança - Juros: ");
+
+        alert("Conta Corrente -  Nome: " + objCorrente.getNomeCorrentista()
+            + "\nConta Corrente -  Banco: " + objCorrente.getBanco()
+            + "\nConta Corrente -  Número da Conta: " + objCorrente.getNumConta()
+            + "\nConta Corrente -  Saldo: " + objCorrente.getSaldo()
+            + "\nConta Corrente -  Saldo Especial: " + objCorrente.getSaldoEspecial()
+        )
+        alert("Conta Poupança -  Nome: " + objPoupanca.getNomeCorrentista()
+            + "\nConta Poupança -  Banco: " + objPoupanca.getBanco()
+            + "\nConta Poupança -  Número da Conta: " + objPoupanca.getNumConta()
+            + "\nConta Poupança -  Saldo: " + objPoupanca.getSaldo()
+            + "\nConta Poupança -  Juros: " + objPoupanca.getJuros()
+        )
+
+    </script>
+</body>
+</html>
